@@ -2,11 +2,15 @@
 #include <time.h>
 
 int my_time(void) {
+    time_t now = time(NULL);
+    struct tm *ptm = localtime(&now);   // returns pointer to static storage
+    if (!ptm) return -1;
 
-    time_t now = time(NULL);                    
-    struct tm lt = *localtime(&now);            
+    struct tm lt;                       // own copy
+    lt = *ptm;                          // struct assignment (shallow copy)
+                                        // struct copy with =
+                                        // Be careful if pointer exists.
 
-    // Print local time directly from struct tm members
     printf("Local time: %04d-%02d-%02d %02d:%02d:%02d\n",
            lt.tm_year + 1900,   // Year starts from 1900
            lt.tm_mon + 1,       // Month starts from 0
@@ -14,7 +18,6 @@ int my_time(void) {
            lt.tm_hour,          // Hour
            lt.tm_min,           // Minute
            lt.tm_sec);          // Second
-
     return 0;
 }
 
