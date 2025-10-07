@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     r.id = atoi(argv[1]);
     r.course = 1141;
 
-    fILE *fp = fopen("1.bin", "wb");
+    FILE *fp = fopen("1.bin", "wb");
     if (!fp) {
         perror("fopen");
         return 2;
