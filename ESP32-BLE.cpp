@@ -81,7 +81,7 @@ void setup() {
   uint64_t chipid = ESP.getEfuseMac(); 
   char devName[32];
   // 取 MAC 位址後兩碼 (例如 A1B2)
-  sprintf(devName, "ESP32-S3-%04X", (uint16_t)(chipid >> 32)); 
+  sprintf(devName, "ESP32-S3-GROUP99"); 
 
   Serial.println("------------------------------------");
   Serial.print("【重要】本裝置名稱為: ");
