@@ -59,9 +59,9 @@ void get_pi_web(){
         // Get the response payload
         String payload = http.getString();
         
-        Serial.print("[%s] --- Server Response (Start) ---", group_id);
+        Serial.printf("[%s] --- Server Response (Start) ---", group_id);
         Serial.println(payload);
-        Serial.print("[%s] --- Server Response (End) ---\n", group_id);
+        Serial.printf("[%s] --- Server Response (End) ---\n", group_id);
       } else {
         Serial.printf("Server responded with error code: %d\n\n", httpCode);
       }
