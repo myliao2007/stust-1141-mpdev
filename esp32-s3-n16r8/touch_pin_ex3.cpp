@@ -35,23 +35,17 @@ void loop() {
   // 3. LED 多段顏色控制邏輯
   
   if (val > 100000) {
-    // [區間 1] 高於 10 萬 -> 藍燈
-    // (紅, 綠, 藍)
     neopixelWrite(rgbPin, 0, 0, 50); 
   } 
   else if (val > 80000) {
-    // [區間 2] 高於 8 萬 (且小於等於 10 萬) -> 橘燈
-    // 橘色 = 紅多 + 綠少
     neopixelWrite(rgbPin, 50, 25, 0);
   } 
   else if (val > 40000) {
-    // [區間 3] 高於 4 萬 (且小於等於 8 萬) -> 綠燈
+
     neopixelWrite(rgbPin, 0, 50, 0);
   } 
   else {
-    // [區間 4] 低於等於 4 萬 -> 白燈
-    // 白色 = 紅 + 綠 + 藍 全部都有
-    neopixelWrite(rgbPin, 20, 20, 20); // 亮度設低一點，白光很耗電且刺眼
+    neopixelWrite(rgbPin, 20, 20, 20); 
   }
   
   delay(20); // 取樣頻率約 50Hz
