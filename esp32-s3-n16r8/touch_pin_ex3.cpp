@@ -2,10 +2,6 @@
  * ESP32-S3 多段觸控示波器 (Multi-Level Touch Monitor)
  * 功能：根據觸控數值大小，顯示 4 種不同顏色的燈號
  * 邏輯：
- * - > 100,000 : 藍燈 (Blue)
- * - > 80,000  : 橘燈 (Orange)
- * - > 40,000  : 綠燈 (Green)
- * - <= 40,000 : 白燈 (White)
  */
 
 const int touchPin = 4;
